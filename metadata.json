@@ -1,0 +1,6 @@
+{
+  "name": "Mithaas & Co.",
+  "description": "Artisanal handcrafted bakery and coffee boutique featuring gourmet cakes, desserts, Parisian pastries, and bespoke celebratory boxes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

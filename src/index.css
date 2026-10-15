@@ -1,0 +1,358 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--theme-bg, #2B1810);
+    color: var(--theme-text-title, #FAF6F0);
+  }
+
+  body {
+    background-color: var(--theme-bg, #2B1810);
+    color: var(--theme-text-title, #FAF6F0);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom aesthetic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg, #FAF7F2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-card-border, #E5D9CE);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent, #CDBBB0);
+}
+
+/* ==========================================================================
+   MITHAAS & CO. DYNAMIC ATMOSPHERIC INTERFACE THEMES
+   ========================================================================== */
+:root,
+[data-theme="warm-espresso"] {
+  --theme-bg: #2B1810;
+  --theme-bg-translucent: rgba(43, 24, 16, 0.92);
+  --theme-surface: rgba(56, 34, 25, 0.85);
+  --theme-surface-glass: rgba(56, 34, 25, 0.72);
+  --theme-card: #382319;
+  --theme-card-translucent: rgba(56, 35, 25, 0.92);
+  --theme-card-border: #55392C;
+  --theme-primary: #D4A373;
+  --theme-primary-hover: #E5B895;
+  --theme-primary-text: #24140D;
+  --theme-accent: #E5B895;
+  --theme-accent-soft: rgba(229, 184, 149, 0.16);
+  --theme-text-title: #FAF6F0;
+  --theme-text-body: #E8DDD3;
+  --theme-text-muted: #BFAEA2;
+  --theme-ribbon-bg: #1E100A;
+  --theme-ribbon-text: #E5B895;
+  --theme-nav-bg: rgba(38, 22, 15, 0.94);
+  --theme-aura-1: rgba(229, 184, 149, 0.22);
+  --theme-aura-2: rgba(184, 115, 51, 0.25);
+  --theme-aura-3: rgba(212, 163, 115, 0.18);
+  --theme-is-dark: 1;
+}
+
+[data-theme="midnight-patisserie"] {
+  --theme-bg: #140E0C;
+  --theme-bg-translucent: rgba(20, 14, 12, 0.88);
+  --theme-surface: rgba(30, 21, 18, 0.85);
+  --theme-surface-glass: rgba(30, 21, 18, 0.75);
+  --theme-card: #221815;
+  --theme-card-translucent: rgba(34, 24, 21, 0.9);
+  --theme-card-border: #4A352D;
+  --theme-primary: #D4AF37;
+  --theme-primary-hover: #E6C258;
+  --theme-primary-text: #140E0C;
+  --theme-accent: #F59E0B;
+  --theme-accent-soft: rgba(212, 175, 55, 0.15);
+  --theme-text-title: #FAF6F0;
+  --theme-text-body: #E8DACD;
+  --theme-text-muted: #BBA99C;
+  --theme-ribbon-bg: #1F1411;
+  --theme-ribbon-text: #D4AF37;
+  --theme-nav-bg: rgba(20, 14, 12, 0.92);
+  --theme-aura-1: rgba(212, 175, 55, 0.28);
+  --theme-aura-2: rgba(245, 158, 11, 0.2);
+  --theme-aura-3: rgba(180, 83, 9, 0.25);
+  --theme-is-dark: 1;
+}
+
+[data-theme="velvet-rose"] {
+  --theme-bg: #FCF6F7;
+  --theme-bg-translucent: rgba(252, 246, 247, 0.88);
+  --theme-surface: rgba(255, 253, 254, 0.85);
+  --theme-surface-glass: rgba(255, 253, 254, 0.75);
+  --theme-card: #FFFDFE;
+  --theme-card-translucent: rgba(255, 253, 254, 0.9);
+  --theme-card-border: #F0D9DF;
+  --theme-primary: #5C2D3A;
+  --theme-primary-hover: #48202C;
+  --theme-primary-text: #FAF6F0;
+  --theme-accent: #C06072;
+  --theme-accent-soft: #FDEEF2;
+  --theme-text-title: #3A1E26;
+  --theme-text-body: #5E3E47;
+  --theme-text-muted: #88626C;
+  --theme-ribbon-bg: #5C2D3A;
+  --theme-ribbon-text: #FDF6F7;
+  --theme-nav-bg: rgba(252, 246, 247, 0.92);
+  --theme-aura-1: rgba(244, 114, 182, 0.28);
+  --theme-aura-2: rgba(242, 181, 196, 0.35);
+  --theme-aura-3: rgba(251, 207, 232, 0.3);
+  --theme-is-dark: 0;
+}
+
+[data-theme="caramel-gold"] {
+  --theme-bg: #FDF8F0;
+  --theme-bg-translucent: rgba(253, 248, 240, 0.88);
+  --theme-surface: rgba(255, 253, 248, 0.85);
+  --theme-surface-glass: rgba(255, 253, 248, 0.75);
+  --theme-card: #FFFEFB;
+  --theme-card-translucent: rgba(255, 254, 251, 0.9);
+  --theme-card-border: #F1DEC2;
+  --theme-primary: #4E3018;
+  --theme-primary-hover: #3D2310;
+  --theme-primary-text: #FAF6F0;
+  --theme-accent: #D97706;
+  --theme-accent-soft: #FEF3C7;
+  --theme-text-title: #38210F;
+  --theme-text-body: #5C3D24;
+  --theme-text-muted: #866447;
+  --theme-ribbon-bg: #4E3018;
+  --theme-ribbon-text: #FDF8F0;
+  --theme-nav-bg: rgba(253, 248, 240, 0.92);
+  --theme-aura-1: rgba(245, 158, 11, 0.32);
+  --theme-aura-2: rgba(217, 119, 6, 0.22);
+  --theme-aura-3: rgba(251, 191, 36, 0.25);
+  --theme-is-dark: 0;
+}
+
+[data-theme="matcha-pistachio"] {
+  --theme-bg: #F7FAF5;
+  --theme-bg-translucent: rgba(247, 250, 245, 0.88);
+  --theme-surface: rgba(254, 255, 253, 0.85);
+  --theme-surface-glass: rgba(254, 255, 253, 0.75);
+  --theme-card: #FDFFFC;
+  --theme-card-translucent: rgba(253, 255, 252, 0.9);
+  --theme-card-border: #D7E7D4;
+  --theme-primary: #2D3E2F;
+  --theme-primary-hover: #1E2B20;
+  --theme-primary-text: #FAF6F0;
+  --theme-accent: #557A46;
+  --theme-accent-soft: #EBF3E8;
+  --theme-text-title: #1F2E21;
+  --theme-text-body: #3D4E40;
+  --theme-text-muted: #647766;
+  --theme-ribbon-bg: #2D3E2F;
+  --theme-ribbon-text: #F7FAF5;
+  --theme-nav-bg: rgba(247, 250, 245, 0.92);
+  --theme-aura-1: rgba(132, 204, 22, 0.25);
+  --theme-aura-2: rgba(101, 163, 13, 0.2);
+  --theme-aura-3: rgba(163, 230, 53, 0.22);
+  --theme-is-dark: 0;
+}
+
+[data-theme="lavender-twilight"] {
+  --theme-bg: #F8F5FC;
+  --theme-bg-translucent: rgba(248, 245, 252, 0.88);
+  --theme-surface: rgba(255, 253, 255, 0.85);
+  --theme-surface-glass: rgba(255, 253, 255, 0.75);
+  --theme-card: #FFFEFF;
+  --theme-card-translucent: rgba(255, 254, 255, 0.9);
+  --theme-card-border: #E5DBF0;
+  --theme-primary: #3B264E;
+  --theme-primary-hover: #2B1B3A;
+  --theme-primary-text: #FAF6F0;
+  --theme-accent: #8E5BAA;
+  --theme-accent-soft: #F2EBF9;
+  --theme-text-title: #2A1A38;
+  --theme-text-body: #4A355A;
+  --theme-text-muted: #7A628B;
+  --theme-ribbon-bg: #3B264E;
+  --theme-ribbon-text: #F8F5FC;
+  --theme-nav-bg: rgba(248, 245, 252, 0.92);
+  --theme-aura-1: rgba(168, 85, 247, 0.25);
+  --theme-aura-2: rgba(192, 132, 252, 0.2);
+  --theme-aura-3: rgba(216, 180, 254, 0.22);
+  --theme-is-dark: 0;
+}
+
+/* Soft luxury glass and card transitions */
+.luxury-glass {
+  background: var(--theme-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--theme-card-border);
+}
+
+.luxury-card {
+  background: var(--theme-card-translucent);
+  border: 1px solid var(--theme-card-border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Atmosphere Animations */
+@keyframes floatParticle {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(14px, -28px) rotate(120deg) scale(1.05);
+  }
+  66% {
+    transform: translate(-12px, -50px) rotate(240deg) scale(0.98);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes floatParticleReverse {
+  0% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+  33% {
+    transform: translate(-16px, -32px) rotate(240deg) scale(1.08);
+  }
+  66% {
+    transform: translate(10px, -54px) rotate(120deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-70px) scaleX(1.4) scaleY(1.3);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-150px) scaleX(2.2) scaleY(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes cafePulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15) translate(15px, -15px);
+  }
+}
+
+@keyframes auroraFlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes twinkleStar {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.2) rotate(45deg);
+  }
+}
+
+@keyframes aromaWave {
+  0% {
+    transform: translateX(-8%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(8%) rotate(4deg);
+  }
+  100% {
+    transform: translateX(-8%) rotate(0deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatParticle 22s ease-in-out infinite;
+}
+
+.animate-float-mid {
+  animation: floatParticleReverse 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatParticle 10s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkleStar 3.5s ease-in-out infinite;
+}
+
+.animate-steam-1 {
+  animation: steamRise 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-steam-2 {
+  animation: steamRise 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.8s;
+}
+
+.animate-steam-3 {
+  animation: steamRise 7.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 3.2s;
+}
+
+.animate-cafe-pulse {
+  animation: cafePulse 9s ease-in-out infinite;
+}
+
+.animate-aurora {
+  animation: auroraFlow 25s linear infinite;
+}
+
+.animate-aroma {
+  animation: aromaWave 14s ease-in-out infinite;
+}
+
